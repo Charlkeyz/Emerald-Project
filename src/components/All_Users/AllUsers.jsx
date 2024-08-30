@@ -21,7 +21,7 @@ export default function AllUsers() {
 
 
   return (
-    <Card className="w-full h-full bg-white lg:w-[50%] flex flex-col items-center rounded-3xl">
+    <Card className="w-full h-full bg-white lg:w-auto flex flex-col items-center rounded-3xl">
 
         <CardHeader className="flex flex-col mt-10 lg:pl-10 lg:items-start ">
           <p>{isUserLocation ? "Users List" : "All Users"}</p>
