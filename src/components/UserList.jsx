@@ -1,4 +1,4 @@
-import { Avatar, Card, CardBody } from "@nextui-org/react";
+import { Avatar, Card, CardBody, CardFooter } from "@nextui-org/react";
 import { useContext } from "react";
 import { ContextApi } from "./ContextApi";
 import { Link, useParams } from "react-router-dom";
@@ -19,7 +19,7 @@ export default function UserList() {
     if (!user) return <p>User not found</p>;
     
 
-    const {image, name, address, age, email, country, date, phone} = user
+    const {image, name, address, age, email, country, date, phone, cell} = user
 
     
 
@@ -27,8 +27,8 @@ export default function UserList() {
   return (
     <>
         <Card className=" shadow-none">
-            <CardBody className="flex flex-row items-center gap-4" >
-                <div className="flex items-center lg:flex-col">
+            <CardBody className="flex flex-col items-center gap-4 lg:flex-row" >
+                <div className="flex items-center flex-col">
                     <Link to="/" className="flex items-center gap-3"><FaArrowLeft color="#75D6D1" size={25}/> RESULT </Link>
                     <Avatar 
                         src={image} 
@@ -37,9 +37,9 @@ export default function UserList() {
                         size="lg"
                         className="border-5 border-[#75D6D1] w-48 h-48 m-5"/>
                 </div>
-                <div className="flex flex-col items-start gap-3">
+                <div className="flex flex-col items-center justify-center lg:items-start gap-3">
                     <p className="font-bold text-3xl">{name}<span className="font-extralight px-2">{age}</span></p>
-                    <p>{address} <span>{country}</span></p>
+                    <p className="text-center">{address} <span>{country}</span></p>
                     <p 
                         className="flex items-center gap-2 bg-[#D9D9E0] rounded-full text-sm px-5 py-2">
                             <FaRegEnvelope color="gray"/><span className="tracking-widest">{email}</span>
@@ -47,9 +47,13 @@ export default function UserList() {
                     <p className="bg-[#F7D9F2] flex items-center gap-2 rounded-full text-sm px-5 py-2 tracking-widest">
                         <span>JOINED:</span> {date}
                     </p>
-                    <p className="flex items-center gap-2"><MdOutlinePhoneInTalk/>{phone}</p>
                 </div>
             </CardBody>
+            <CardFooter 
+                className="flex flex-col items-center justify-center gap-5 text-xs bg-white border border-none opacity-40 cursor-not-allowed pointer-events-none">
+                <p className="flex items-center gap-2"><MdOutlinePhoneInTalk/>{phone}</p>
+                <p>{cell}</p>
+            </CardFooter>
         </Card>
     </>
   )

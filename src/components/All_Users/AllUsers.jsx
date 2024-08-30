@@ -21,7 +21,7 @@ export default function AllUsers() {
 
 
   return (
-    <Card className="w-full h-full bg-white lg:w-[55%] flex flex-col items-center rounded-3xl">
+    <Card className="w-full h-full bg-white lg:w-[50%] flex flex-col items-center rounded-3xl">
 
         <CardHeader className="flex flex-col mt-10 lg:pl-10 lg:items-start ">
           <p>{isUserLocation ? "Users List" : "All Users"}</p>
@@ -42,9 +42,9 @@ export default function AllUsers() {
                   inputWrapper: ' bg-[#F2F2F2] h-14 '
                 }}
               />
-                <div className="flex w-full items-center justify-center gap-10">
+                <div className="flex w-screen items-center justify-center gap-10 p-2 lg:w-full ">
                     <SelectCountries/>
-                    <div className="flex items-center gap-3"><SwitchBtn/></div> 
+                    <div className="flex items-center gap-2"><SwitchBtn/><span>Show Country</span></div> 
                 </div>
             </section>
             
@@ -54,7 +54,10 @@ export default function AllUsers() {
             </Routes>
 
         </CardBody>
-        <CardFooter className="flex flex-col justify-between items-center gap-10 p-5 lg:flex-row">
+        <CardFooter 
+            className={`${isUserLocation ? 'bg-white p-20 border border-none opacity-40 cursor-not-allowed pointer-events-none flex flex-col justify-between items-center gap-10 lg:flex-row'
+             : 'flex flex-col justify-between items-center gap-10 p-20 lg:flex-row'}`}>
+
             <Button 
               startContent={<FaCloudDownloadAlt size={20} color="white"/>}
               className="bg-[#7946C1] text-white"
@@ -65,6 +68,7 @@ export default function AllUsers() {
             <Pagination
               total={totalPage}
               showControls
+              showShadow
               initialPage={currentPage}
               onChange={(page)=> handlePageChange(page)}/>
         </CardFooter>

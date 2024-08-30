@@ -26,7 +26,7 @@ export default function CardComponent() {
                   
                 return(
                   <Card key={index} shadow="lg" className="flex flex-col justify-center items-center lg:flex-row" >
-                      <CardBody className="w-full flex items-start lg:flex-row ">
+                      <CardBody className="w-full flex items-center  lg:flex-row lg:items-start ">
                           <div className="flex flex-col items-center justify-around lg:flex-row">
                               <Avatar  
                                 radius="full"

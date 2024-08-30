@@ -39,7 +39,7 @@ export default function ShowUsers() {
                     style={{backgroundColor: item.bgColor}}
                     
                     onClick={()=> setSelectGender(item.gender)} 
-                    size="lg" className="rounded-xl p-16 flex justify-center items-center text-4xl lg:p-12">
+                    size="lg" className="rounded-xl shadow-2xl p-16 flex justify-center items-center text-4xl lg:p-12">
                     {item.image}
                 </Button>
                 <p className="text-center text-textPrimary py-4 text-xs">{item.title}</p>

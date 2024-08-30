@@ -7,7 +7,9 @@
 
 
 body{
-    background-color: #262A41
+    background-color: #262A41;
+    width: 100vw;
+    height: 100vh
 }
 
 

@@ -3,8 +3,10 @@ import ShowUsers from "./ShowUsers";
 
 
 export default function Emerald() {
+
+  
   return (
-    <div className="font-sans  text-white p-16 ">
+    <div className="font-sans text-white pt-10 lg:w-[40%] lg:h-screen">
       
             <p className=" text-3xl font-thin flex flex-col items-start gap-3 lg:flex-row">
                 Hello, <span className=" font-bold" >Emerald</span>

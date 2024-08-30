@@ -46,6 +46,7 @@ export const ContextApiProvider = ({children}) => {
                     address: `${user.location.street.number} ${user.location.street.name}, ${user.location.city}`,
                     country: user.location.country,
                     gender: user.gender,
+                    cell: user.cell,
                     age: user.dob.age,
                     image: user.picture.large,
                     phone: user.phone,
@@ -78,6 +79,7 @@ export const ContextApiProvider = ({children}) => {
         })
 
         setFilteredUsers(filterUser)
+        //set pagination to 1
         setCurrentPage(1)
 
     }
@@ -91,23 +93,31 @@ export const ContextApiProvider = ({children}) => {
     useEffect(()=> {
         fetchData()
     },[])
+
+    //handle the switch component
     const handleToggle = () => {
         setIsSelected(!isSelected)
       }
 
+      //handle the search input
       const handleSearchUser = (e) => {
         setSearchUser(e.target.value)
       }
+
+      //handle select input
       const handleCountries = (e) => {
         setSelectCountry(e.target.value)
       }
-      const userPerPage = 3
+
+        //pagination
+        const userPerPage = 3
         const indexOfLastUser = currentPage * userPerPage
         const indexOfFirstUser = indexOfLastUser - userPerPage
         
         const currentUsers = filteredUsers.slice(indexOfFirstUser, indexOfLastUser)
         const totalPage = Math.ceil(filteredUsers.length / userPerPage)
 
+        //pagination
         const handlePageChange = (page) => {
             setCurrentPage(page)
         } 
