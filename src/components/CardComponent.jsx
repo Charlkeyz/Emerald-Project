@@ -34,7 +34,8 @@ export default function CardComponent() {
                                 src={image}
                                 className="border-5 border-[#75D6D1] w-24 h-auto m-5" />
 
-                              <div className="flex flex-col gap-5 text-sm">
+                                
+                              <div className="flex flex-col items-center gap-5 text-sm lg:items-start">
                                   <p className="font-bold text-xl flex flex-col items-center gap-2 lg:items-start">{name}<span className="font-light text-sm text-center lg:text-start lg:block">
                                       {`${address}, ${isSelected ? country : ""}`} </span>
                                   </p>
