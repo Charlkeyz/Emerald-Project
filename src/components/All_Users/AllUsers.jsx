@@ -68,6 +68,8 @@ export default function AllUsers() {
             <Pagination
               total={totalPage}
               showControls
+              boundaries={0}
+              siblings={0}
               showShadow
               initialPage={currentPage}
               onChange={(page)=> handlePageChange(page)}/>
